@@ -1,5 +1,9 @@
-Factorial: CSources/Factorial.c
-	clang -shared CSources/Factorial.c -o libFactorial.so
+SRCDIR = CSources
+SHAREDLIB = libFactorial.so
+Factorial: $(SRCDIR)/Factorial.c
+	clang -shared $(SRCDIR)/Factorial.c -o $(SHAREDLIB)
+	cp libFactorial.so /usr/local/lib
 
 clean:
-	-rm -f libFactorial.so
+	-rm -f $(SHAREDLIB)
+	-rm -f /usr/local/lib/$(SHAREDLIB)

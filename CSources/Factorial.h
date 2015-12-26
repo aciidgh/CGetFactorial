@@ -1,1 +1,1 @@
-int factorial(int n);
+long factorial(long n);
